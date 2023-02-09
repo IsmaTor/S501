@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://wwww.thymeleaf.org">
+<head th:fragment="head">
+<meta charset="UTF-8">
+<title>CRUD sucursal</title>
+<link rel="stylesheet" th:href="@{css/bootstrap.min.css}">
+
+</head>
+<body>
+
+	<!-- BARRA DE NAVEGACIÓN -->
+	<header th:fragment="header">
+
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<div class="container">
+				<a class="navbar-brand" href="#">
+					<strong>IT SUCURSAL</strong>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse"
+					data-target="#navbarSupportedContent"
+					aria-controls="navbarSupportedContent" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<!-- ENLACES DEL MENÚ -->
+				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+					<ul class="navbar-nav mr-auto">
+						<li class="nav-item active"><a class="nav-link" th:href="@{/index}">Inici
+								<span class="sr-only">(current)</span>
+						</a></li>
+						<li class="nav-item"><a class="nav-link" th:href="@{/listado}">Sucursals</a></li>
+
+					</ul>
+
+				</div>
+			</div>
+		</nav>
+
+	</header>
+
+	<!-- CONTENIDO -->
+	<div class="container"></div>
+
+	<!-- PIE DE PÁGINA -->
+	<footer th:fragment="footer" class="bg-dark text-center text-white fixed-bottom">
+
+		<div class="container">
+			<p>Copyrighth Ismael Tortosa de la Iglesia &copy; -2023</p>
+		</div>
+
+		<script type="text/javascript" th:src="@{/js/jquery-3.3.1.slim.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/bootstrap.min.js}"></script>
+		<script type="text/javascript" th:src="@{/js/popper.min.js}"></script>
+	</footer>
+
+</body>
+</html>
