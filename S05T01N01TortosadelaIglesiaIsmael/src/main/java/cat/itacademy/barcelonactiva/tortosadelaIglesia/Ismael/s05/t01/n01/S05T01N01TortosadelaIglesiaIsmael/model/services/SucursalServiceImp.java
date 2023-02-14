@@ -36,12 +36,12 @@ public class SucursalServiceImp implements ISucursalServicesDAO {
 	
 	@Override
 	public void update(int id, SucursalDTO sucursalDTO) {
-		
+
 		Optional<Sucursal> SetSucursal = sucursalRepository.findById(id);
-		
+
 		SetSucursal.orElseThrow().setNomSucursal(sucursalDTO.getNomSucursal());
 		SetSucursal.orElseThrow().setPaisSucursal(sucursalDTO.getPaisSucursal());
-		
+
 		sucursalRepository.save(SetSucursal.orElseThrow());
 	}
 

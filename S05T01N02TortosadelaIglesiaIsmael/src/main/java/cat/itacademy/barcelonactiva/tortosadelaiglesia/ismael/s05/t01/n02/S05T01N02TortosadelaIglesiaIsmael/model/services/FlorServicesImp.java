@@ -53,7 +53,7 @@ public class FlorServicesImp implements IFlorServicesDAO {
 
 	@Override
 	public List<FlorDTO> getAll() {
-		
+
 		return florRepository.findAll().stream().map(this::convertEntityToDTO).collect(Collectors.toList());
 	}
 	

@@ -12,8 +12,8 @@
 	</div>
 
 	<div class="container">
-		
-		<a class="btn btn-primary btn-sm" th:href="@{/create}" 
+
+		<a class="btn btn-primary btn-sm" th:href="@{/create}"
 		   th:text="'Nuevo Cliente'" title="Crear Nuevo Registro">
 		   </a>
 		<table class="table">
@@ -35,15 +35,15 @@
 					<td th:text="${sc.paisSucursal}"></td>
 					<td th:text="${sc.tipusSucursal}"></td>
 					<td>
-						<a class="btn btn-success btn-sm" th:href="@{/edit/} + ${sc.pk_SucursalID}" 
+						<a class="btn btn-success btn-sm" th:href="@{/edit/} + ${sc.pk_SucursalID}"
 		   					th:text="'Editar'" title="Editar Registro">
 		   				</a>
 					</td>
 					<td>
-						<a class="btn btn-danger btn-sm" th:href="@{/eliminar/} + ${sc.pk_SucursalID}" 
+						<a class="btn btn-danger btn-sm" th:href="@{/eliminar/} + ${sc.pk_SucursalID}"
 		   					th:text="'Eliminar'" title="Eliminar Registro"
 		   					onclick="return confirm('Està segur?');">
-		   					
+
 		   				</a>
 					</td>
 

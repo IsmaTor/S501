@@ -41,7 +41,7 @@ public class FlorDTO implements Serializable {
 		if(paisTrobat) {
 			pais = "U.E.";
 		} else {
-			pais = " ";
+			pais = "Fora de la U.E.";
 		}
 		return pais;
 	}

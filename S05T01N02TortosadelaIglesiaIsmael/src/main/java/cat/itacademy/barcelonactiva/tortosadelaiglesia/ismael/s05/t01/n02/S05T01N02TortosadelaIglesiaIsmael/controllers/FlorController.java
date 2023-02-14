@@ -21,8 +21,7 @@ public class FlorController {
 
 	@Operation(summary = "Mostra totes les  flors")
 	@GetMapping(path= "/getAll") //http://localhost:9001/flor/getAll
-
-    public ResponseEntity<?> getAll() {
+	public ResponseEntity<?> getAll() {
         try {
             List<FlorDTO> flors = florServices.getAll();
 				for (FlorDTO florsE : flors) {
@@ -31,7 +30,7 @@ public class FlorController {
 				}
 			return new ResponseEntity<>(flors, HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>("Flor no trobada" + e, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 	@Operation(summary = "Crea una flor")
@@ -48,12 +47,16 @@ public class FlorController {
 	}
 	@Operation(summary = "Mostra la flor per id")
 	@GetMapping(path= "/getOne/{id}") //http://localhost:9001/flor/getOne/?
-	public ResponseEntity<FlorDTO> getOneFlor(@PathVariable int id){
-		FlorDTO florDTO = florServices.getOne(id);
-		String tipus = florDTO.tipusPais(florDTO.getPaisFlor());
-		florDTO.setTipusFlor(tipus); 
-		
-		return new  ResponseEntity<>(florDTO, HttpStatus.OK);
+	public ResponseEntity<?> getOneFlor(@PathVariable int id){
+		try {
+			FlorDTO florDTO = florServices.getOne(id);
+			String tipus = florDTO.tipusPais(florDTO.getPaisFlor());
+			florDTO.setTipusFlor(tipus);
+
+			return new ResponseEntity<>(florDTO, HttpStatus.OK);
+		} catch (Exception e){
+			return new ResponseEntity<>("Flor no trobada.", HttpStatus.INTERNAL_SERVER_ERROR);
+		}
 	}
 	@Operation(summary = "Modifca la flor per id")
 	@PutMapping(path= "/update/{id}") //http://localhost:9001/flor/update/?
